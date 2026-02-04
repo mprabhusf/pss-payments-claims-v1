@@ -1,0 +1,20 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start dev server",
+      "type": "npm",
+      "script": "dev",
+      "problemMatcher": [],
+      "presentation": { "reveal": "always" },
+      "group": "build"
+    },
+    {
+      "label": "Open app in Simple Browser (Cursor)",
+      "type": "shell",
+      "command": "echo '→ In Cursor: Press Cmd+Shift+P (Mac) or Ctrl+Shift+P (Win/Linux)\n→ Run: Simple Browser: Show\n→ Enter URL: http://localhost:5173\n\n(Start the dev server first if needed: Run Task → Start dev server)'",
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "shared" }
+    }
+  ]
+}
