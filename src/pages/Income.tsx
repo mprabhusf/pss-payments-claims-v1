@@ -32,7 +32,11 @@ export function Income() {
             <input type="number" className="input" placeholder="0" />
           </div>
         </div>
-        <DocumentCenter title="Income verification" acceptedTypes="PDF, JPG, PNG" />
+        <DocumentCenter
+          title="Document Center"
+          helperText="Upload pay stubs or other income verification. Uploading documents allows the system to auto-fill parts of the form."
+          acceptedFileTypes={['.pdf', '.jpeg', '.png']}
+        />
       </SummaryCard>
       <SummaryCard
         title="Other income"

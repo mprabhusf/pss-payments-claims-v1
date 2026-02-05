@@ -28,7 +28,11 @@ export function Assets() {
             <input type="number" className="input" placeholder="0" />
           </div>
         </div>
-        <DocumentCenter title="Asset verification" acceptedTypes="PDF, JPG, PNG" />
+        <DocumentCenter
+          title="Document Center"
+          helperText="Upload bank statements or other asset verification. Uploading documents allows the system to auto-fill parts of the form."
+          acceptedFileTypes={['.pdf', '.jpeg', '.png']}
+        />
       </SummaryCard>
       <SummaryCard title="Other assets" summary="No other assets" onEdit={() => {}}>
         <div>

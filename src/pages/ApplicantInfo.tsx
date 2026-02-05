@@ -18,9 +18,9 @@ export function ApplicantInfo() {
     <div>
       <h3 className="section-title">Applicant Information</h3>
       <DocumentCenter
-        title="Applicant ID"
-        acceptedTypes="PDF, JPG, PNG (max 10MB)"
-        uploadButtonLabel="Upload Document"
+        title="Document Center"
+        helperText="Upload a copy of your applicant ID (e.g. driver's license, state ID). Uploading documents allows the system to auto-fill parts of the form."
+        acceptedFileTypes={['.pdf', '.jpeg', '.png']}
       />
       <div className="card" style={{ marginTop: 'var(--space-6)' }}>
         <h3 className="section-title">Personal details</h3>
