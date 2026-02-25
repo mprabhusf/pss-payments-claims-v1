@@ -1,0 +1,208 @@
+.panel {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  max-width: 380px;
+}
+
+.panelTitle {
+  margin: 0 0 var(--space-4);
+  font-size: var(--text-section);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+.tabs {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border-bottom: 2px solid var(--color-border);
+  margin-bottom: var(--space-4);
+}
+
+.tab,
+.tabActive {
+  padding: var(--space-2) var(--space-4);
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-muted);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  cursor: pointer;
+}
+
+.tab:hover {
+  color: var(--color-text);
+}
+
+.tabActive {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+.tabMore {
+  margin-left: auto;
+}
+
+.selectSmall {
+  padding: var(--space-1) var(--space-2);
+  font-size: 0.875rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-white);
+  color: var(--color-text-muted);
+}
+
+.composer {
+  margin-bottom: var(--space-6);
+}
+
+.composerTo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.composerLabel {
+  font-size: var(--text-helper);
+  color: var(--color-text-muted);
+}
+
+.composerTo .select {
+  flex: 1;
+  max-width: 180px;
+}
+
+.composerInput {
+  margin-bottom: var(--space-2);
+  min-height: 80px;
+}
+
+.composerActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.formatIcons {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.iconBtn {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-white);
+  font-size: 0.875rem;
+  cursor: pointer;
+  color: var(--color-text-muted);
+}
+
+.iconBtn:hover {
+  background: var(--color-page-bg);
+  color: var(--color-text);
+}
+
+.feedSection {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+}
+
+.feedHeader {
+  margin-bottom: var(--space-3);
+}
+
+.feedHeader .select {
+  width: 100%;
+  max-width: 220px;
+}
+
+.feedList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.feedItem {
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.feedItem:last-child {
+  border-bottom: none;
+}
+
+.feedItemHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-semibold);
+  flex-shrink: 0;
+}
+
+.feedItemMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.feedUserName {
+  font-size: var(--text-label);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+}
+
+.feedTime {
+  font-size: var(--text-helper);
+  color: var(--color-text-muted);
+}
+
+.feedContent {
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-helper);
+  line-height: var(--line-height-normal);
+  color: var(--color-text);
+}
+
+.mention {
+  color: var(--color-info);
+  font-weight: var(--font-weight-medium);
+}
+
+.attachmentNote {
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-helper);
+  color: var(--color-text-muted);
+}
+
+.commentInput {
+  font-size: var(--text-helper);
+  padding: var(--space-2);
+}

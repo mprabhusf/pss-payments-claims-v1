@@ -1,10 +1,26 @@
-import { useEffect, useState } from 'react'
-import { SummaryCard } from '../components/ui/SummaryCard'
+import { useEffect, useState, useCallback } from 'react'
+import { HouseholdMemberCard } from '../components/household/HouseholdMemberCard'
+import type { HouseholdMemberCardData } from '../components/household/HouseholdMemberCard'
+import { relationshipToPrimaryOptions } from '../components/household/relationshipOptions'
+import { defaultPersonInformationFormOptions } from '../components/forms/personInformationFormOptions'
+import { defaultPersonInformationValues } from '../components/forms/PersonInformationForm.types'
 import { useActionBar } from '../context/ActionBarContext'
+
+function createNewMember(id: string, expanded = true): HouseholdMemberCardData {
+  return {
+    id,
+    displayName: '',
+    relationshipToPrimary: '',
+    personValues: { ...defaultPersonInformationValues },
+    expanded,
+  }
+}
 
 export function HouseholdInfo() {
   const { setActionBar } = useActionBar()
-  const [members, setMembers] = useState([{ id: '1', name: 'Radhika Madan', relationship: 'Self' }])
+  const [members, setMembers] = useState<HouseholdMemberCardData[]>(() => [
+    createNewMember('member-1', true),
+  ])
 
   useEffect(() => {
     setActionBar({
@@ -15,8 +31,22 @@ export function HouseholdInfo() {
     })
   }, [setActionBar])
 
-  const addMember = () => {
-    setMembers((m) => [...m, { id: String(Date.now()), name: '', relationship: '' }])
+  const handleUpdate = useCallback((id: string, patch: Partial<HouseholdMemberCardData>) => {
+    setMembers((prev) =>
+      prev.map((m) => (m.id === id ? { ...m, ...patch } : m))
+    )
+  }, [])
+
+  const handleSave = useCallback((_id: string) => {
+    // Card already collapses via onUpdate in HouseholdMemberCard; optionally persist here
+  }, [])
+
+  const handleRemove = useCallback((id: string) => {
+    setMembers((prev) => prev.filter((m) => m.id !== id))
+  }, [])
+
+  const handleAddAnother = () => {
+    setMembers((prev) => [...prev, createNewMember(`member-${Date.now()}`, true)])
   }
 
   return (
@@ -24,37 +54,21 @@ export function HouseholdInfo() {
       <p className="helper-text" style={{ marginBottom: 'var(--space-4)' }}>
         List everyone who lives with you and will be included on this application.
       </p>
+
       {members.map((member) => (
-        <SummaryCard
+        <HouseholdMemberCard
           key={member.id}
-          title={member.name || 'Household member'}
-          summary={
-            <>
-              {member.relationship && <span>Relationship: {member.relationship}</span>}
-            </>
-          }
-          onEdit={() => {}}
-          onDelete={() => setMembers((m) => m.filter((x) => x.id !== member.id))}
-        >
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-4)' }}>
-            <div>
-              <label className="field-label">Full name</label>
-              <input className="input" defaultValue={member.name} placeholder="Full name" />
-            </div>
-            <div>
-              <label className="field-label">Relationship to applicant</label>
-              <select className="select">
-                <option>Self</option>
-                <option>Spouse</option>
-                <option>Child</option>
-                <option>Other</option>
-              </select>
-            </div>
-          </div>
-        </SummaryCard>
+          member={member}
+          relationshipOptions={relationshipToPrimaryOptions}
+          formOptions={defaultPersonInformationFormOptions}
+          onUpdate={handleUpdate}
+          onSave={handleSave}
+          onRemove={members.length > 1 ? handleRemove : undefined}
+        />
       ))}
-      <button type="button" className="btn btn-secondary" onClick={addMember}>
-        + New household member
+
+      <button type="button" className="btn btn-secondary" onClick={handleAddAnother}>
+        Add another
       </button>
     </div>
   )

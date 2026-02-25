@@ -1,0 +1,248 @@
+.page {
+  max-width: 100%;
+}
+
+/* Welcome Banner - full width */
+.welcomeBanner {
+  width: 100%;
+  padding: var(--space-6) var(--space-6);
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-dark) 100%);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-6);
+}
+
+.welcomeGreeting {
+  margin: 0 0 var(--space-2);
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  line-height: var(--line-height-tight);
+}
+
+.welcomeSubtext {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  line-height: var(--line-height-normal);
+}
+
+/* Two-column layout */
+.twoColumn {
+  display: flex;
+  gap: var(--space-6);
+  align-items: flex-start;
+}
+
+.mainColumn {
+  flex: 1;
+  min-width: 0;
+}
+
+.sideColumn {
+  flex-shrink: 0;
+}
+
+/* Referral Requests section */
+.referralSection {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-6);
+}
+
+.sectionHeader {
+  margin-bottom: var(--space-4);
+}
+
+.sectionTitleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: var(--text-section);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+.recentlyViewed {
+  display: flex;
+  align-items: center;
+}
+
+.dropdownTrigger {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-2);
+  font-size: var(--text-helper);
+  color: var(--color-text-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdownTrigger:hover {
+  color: var(--color-text);
+}
+
+.dropdownArrow {
+  font-size: 0.7em;
+}
+
+.statusLine {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  font-size: var(--text-helper);
+  color: var(--color-text-muted);
+}
+
+.statusItem:not(:last-child)::after {
+  content: ' · ';
+  margin-left: var(--space-1);
+  color: var(--color-text-placeholder);
+}
+
+/* Search and batch actions */
+.searchAndActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.searchWrap {
+  flex: 1;
+  max-width: 280px;
+}
+
+.searchWrap .input {
+  width: 100%;
+}
+
+.batchActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.actionIconBtn {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-white);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.actionIconBtn:hover {
+  background: var(--color-page-bg);
+  color: var(--color-text);
+}
+
+/* Table */
+.tableWrap {
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-label);
+}
+
+.table th,
+.table td {
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.table th {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  background: var(--color-page-bg);
+}
+
+.table tbody tr:hover {
+  background: var(--color-primary-light);
+}
+
+.checkboxCol {
+  width: 44px;
+  vertical-align: middle;
+}
+
+.actionsCol {
+  width: 48px;
+  text-align: right;
+  vertical-align: middle;
+}
+
+.rowMenuWrap {
+  position: relative;
+  display: inline-block;
+}
+
+.ellipsisBtn {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--color-text-muted);
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: var(--radius);
+}
+
+.ellipsisBtn:hover {
+  background: var(--color-page-bg);
+  color: var(--color-text);
+}
+
+.rowMenu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: var(--space-1);
+  min-width: 120px;
+  padding: var(--space-2);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card-hover);
+  z-index: 10;
+}
+
+.rowMenu button {
+  display: block;
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  text-align: left;
+  font-size: var(--text-helper);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text);
+}
+
+.rowMenu button:hover {
+  background: var(--color-page-bg);
+}

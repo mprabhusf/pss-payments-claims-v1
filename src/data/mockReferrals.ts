@@ -1,0 +1,63 @@
+import type { Referral, Client } from '../types/entities'
+
+export const mockClients: Client[] = [
+  { id: 'C001', firstName: 'Maria', lastName: 'Garcia', dateOfBirth: '1985-03-12' },
+  { id: 'C002', firstName: 'James', middleName: 'R', lastName: 'Wilson', dateOfBirth: '1990-07-22' },
+  { id: 'C003', firstName: 'Yuki', lastName: 'Tanaka', dateOfBirth: '1978-11-05' },
+  { id: 'C004', firstName: 'Rob', lastName: 'Marshal', dateOfBirth: '1980-01-15' },
+  { id: 'C005', firstName: 'Susan', lastName: 'Marshal', dateOfBirth: '1982-05-20' },
+  { id: 'C006', firstName: 'Adolph Blaine Charles', lastName: 'David Earl', dateOfBirth: '1975-11-08' },
+  { id: 'C007', firstName: 'Justin', lastName: 'Donin', dateOfBirth: '1991-03-30' },
+]
+
+export const mockReferrals: Referral[] = [
+  {
+    id: 'REF-1001',
+    referralTitle: 'Needs Finance Coaching',
+    clientId: 'C004',
+    service: 'Finance Coaching',
+    referralDate: '2023-03-30',
+    referredBy: 'Case Worker Smith',
+    priority: 'High',
+    status: 'In Progress',
+    description: 'Finance coaching sessions.',
+    lastUpdated: '2025-02-24T12:00:00Z',
+    createdAt: '2023-03-30T09:00:00Z',
+  },
+  {
+    id: 'REF-1002',
+    referralTitle: 'Transportation to appointments',
+    clientId: 'C005',
+    service: 'Transportation',
+    referralDate: '2025-02-10',
+    referredBy: 'Case Worker Jones',
+    priority: 'Medium',
+    status: 'Accepted',
+    lastUpdated: '2025-02-24T12:00:00Z',
+    createdAt: '2025-02-10T11:00:00Z',
+  },
+  {
+    id: 'REF-1003',
+    referralTitle: 'Housing support',
+    clientId: 'C006',
+    service: 'Housing Support',
+    referralDate: '2025-02-05',
+    referredBy: 'Case Worker Lee',
+    priority: 'High',
+    status: 'New',
+    lastUpdated: '2025-02-15T08:00:00Z',
+    createdAt: '2025-02-05T08:00:00Z',
+  },
+  {
+    id: 'REF-1004',
+    referralTitle: 'Career counseling',
+    clientId: 'C007',
+    service: 'Career Counseling',
+    referralDate: '2025-02-12',
+    referredBy: 'Case Worker Brown',
+    priority: 'Medium',
+    status: 'In Progress',
+    lastUpdated: '2025-02-20T10:00:00Z',
+    createdAt: '2025-02-12T09:00:00Z',
+  },
+]

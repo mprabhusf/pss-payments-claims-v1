@@ -1,0 +1,120 @@
+.page {
+  max-width: 100%;
+}
+
+.subNav {
+  display: flex;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+  font-size: var(--text-label);
+}
+
+.subNavLink {
+  color: var(--color-info);
+  text-decoration: none;
+}
+
+.subNavLink:hover {
+  text-decoration: underline;
+}
+
+.subNavActive {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+.metric {
+  padding: var(--space-4);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  text-align: center;
+}
+
+.metricValue {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+.metricLabel {
+  font-size: var(--text-helper);
+  color: var(--color-text-muted);
+}
+
+.actions {
+  margin-bottom: var(--space-6);
+}
+
+.tableWrap {
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-white);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-label);
+}
+
+.table th,
+.table td {
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.table th {
+  font-weight: var(--font-weight-semibold);
+  background: var(--color-page-bg);
+}
+
+.statusBadge {
+  display: inline-block;
+  padding: var(--space-1) var(--space-2);
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius);
+}
+
+.statusDraft {
+  background: var(--color-page-bg);
+  color: var(--color-text-muted);
+}
+
+.statusSubmitted {
+  background: var(--color-info-light);
+  color: var(--color-info);
+}
+
+.statusApproved {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.statusPaid {
+  background: var(--color-success-light);
+  color: var(--color-success);
+}
+
+.statusDisputed {
+  background: var(--color-error-light);
+  color: var(--color-error);
+}
+
+.statusRejected {
+  background: var(--color-error-light);
+  color: var(--color-error);
+}
